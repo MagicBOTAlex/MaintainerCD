@@ -1,6 +1,6 @@
 # docker-compose.yml
 services:
-  ping-app:
+  maintainercd:
     container_name: maintainercd
     build: .
     ports:
@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     volumes: ["/var/run/docker.sock:/var/run/docker.sock"]
     environment:
-        TARGET_CONTAINER_NAME: backend
+        TARGET_CONTAINER_NAME: jellyfin
         TIMEOUT_TIME: 0
     healthcheck:
       test: ["CMD-SHELL", "wget -qO- http://localhost:8000/ping | grep -qx 'pong'"]

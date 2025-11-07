@@ -25,6 +25,7 @@ def ping():
 @app.post("/webhook")
 def webhook(payload: WebhookPayload, x_webhook_token: Optional[str] = Header(default=None)):
     runParams = ["docker", "restart", targetContainer]
+    print("Restarting")
     if timeoutTime >= 0:
         runParams.append("-t")
         runParams.append(timeoutTime)

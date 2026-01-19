@@ -51,8 +51,8 @@
           text = ''
             set -euo pipefail
 
-            docker build -t docker.deprived.dev/static-site .
-            docker push docker.deprived.dev/static-site
+            docker build -t docker.deprived.dev/maintainer .
+            docker push docker.deprived.dev/maintainer
           '';
         };
 
